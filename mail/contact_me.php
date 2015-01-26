@@ -2,7 +2,7 @@
 // Check for empty fields
 if(empty($_POST['name'])  		||
    empty($_POST['email']) 		||
-   //empty($_POST['phone']) 		||
+   <!--empty($_POST['phone']) 		||-->
    empty($_POST['message'])	||
    !filter_var($_POST['email'],FILTER_VALIDATE_EMAIL))
    {
@@ -12,7 +12,7 @@ if(empty($_POST['name'])  		||
 	
 $name = $_POST['name'];
 $email_address = $_POST['email'];
-//$phone = $_POST['phone'];
+<!--$phone = $_POST['phone'];-->
 $message = $_POST['message'];
 	
 // Create the email and send the message
@@ -24,3 +24,11 @@ $headers .= "Reply-To: $email_address";
 mail($to,$email_subject,$email_body,$headers);
 return true;			
 ?>
+
+<form action="https://polar-plateau-8662.herokuapp.com/send" method="POST">
+  Email: <input type="text" name="email"><br>
+  Name: <input type="text" name="name"><br>
+  Subject: <input type="text" name="subject"><br>
+  Message: <textarea name="message" cols="40" rows="5"></textarea>
+  <input type="submit" value="Send Message">
+</form>
