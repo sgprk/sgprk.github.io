@@ -12,7 +12,7 @@ if(empty($_POST['name'])  		||
 	
 $name = $_POST['name'];
 $email_address = $_POST['email'];
-$phone = $_POST['phone'];
+<!--$phone = $_POST['phone'];-->
 $message = $_POST['message'];
 	
 // Create the email and send the message
